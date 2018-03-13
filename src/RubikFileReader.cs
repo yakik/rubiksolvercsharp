@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,41 +8,42 @@ using System.Threading.Tasks;
 namespace CSharpRubikSolver
 {
 
-import java.io.FileReader;
-import java.io.IOException;
+
 
 public class RubikFileReader {
-    FileReader c_fileReader;
-    boolean c_fileIsOK;
+    StreamReader c_fileReader;
+    bool c_fileIsOK;
 
-    RubikFileReader() {
+        public RubikFileReader() {
     }
 
-    RubikFileReader(String p_fileLocation) {
+        public RubikFileReader(String p_fileLocation) {
         try {
-            c_fileReader = new FileReader(p_fileLocation);
+            c_fileReader = new StreamReader(p_fileLocation);
             c_fileIsOK = true;
         } catch (IOException ex) {
-            c_fileIsOK = false;
+                Console.WriteLine(ex.Message);
+                c_fileIsOK = false;
         }
     }
 
-    int read() {
+        public int read() {
         if (!c_fileIsOK)
             return -1;
         else
             try {
-                return c_fileReader.read();
+                return c_fileReader.Read();
             } catch (IOException ex) {
-                return -1;
+                    Console.WriteLine(ex.Message);
+                    return -1;
             }
 
     }
 
-    void close(){
+        public void close(){
         try {
-        c_fileReader.close();
-        } catch (IOException ex) {}
+        c_fileReader.Close();
+        } catch (IOException ex) { Console.WriteLine(ex.Message); }
     }
 }
 }

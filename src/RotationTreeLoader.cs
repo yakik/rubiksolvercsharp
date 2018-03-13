@@ -31,8 +31,10 @@ public class RotationTreeLoader {
 
     public static void loadRotationTreeFromStandard(RotationTree p_tree, RotationLinkedList p_rotationLinkedList, int p_depth) {
         if (p_depth == 0) return;
-        for (Face face : Face.values())
-            for (Direction direction : Direction.values()) {
+            foreach (Face face in Enum.GetValues(typeof(Face)))
+               
+                foreach (Direction direction in Enum.GetValues(typeof(Direction))) { 
+              
                 Rotation newRotation = new Rotation(face,direction);
                 if (p_rotationLinkedList.isRedundant(newRotation))
                     continue;
@@ -64,12 +66,14 @@ public class RotationTreeLoader {
             , Permutation p_initialPermutation, RotationLinkedList p_rotationLinkedList, int p_level, String p_progressString){
 
         if (p_level == 0) return;
-        if (p_level>5) System.out.println(p_progressString);
+        if (p_level>5) Console.WriteLine(p_progressString);
         int i=0;
-        for (Face face : Face.values())
-            for (Direction direction : Direction.values()) {
+            foreach (Face face in Enum.GetValues(typeof(Face)))
+
+                foreach (Direction direction in Enum.GetValues(typeof(Direction)))
+                {
             i++;
-            String myProgressString = p_progressString+String.format(".%d",i);
+            String myProgressString = p_progressString+String.Format(".%d",i);
                 Rotation newRotation = new Rotation(face,direction);
                 if (p_rotationLinkedList.isRedundant(newRotation))
                     continue;

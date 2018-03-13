@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,12 @@ namespace CSharpRubikSolver
 {
 
 
-public class Main {
+public class MyMain {
 
-    public static void main(String[] args) {
-        long beginningTime = System.nanoTime();
-        Rubik myRubik = new Rubik();
+    public static void Main(String[] args) {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
       myRubik.rotateFace(new Rotation(Face.B, Direction.CW));
               myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
@@ -76,8 +78,13 @@ public class Main {
         Solution mySolution = mySolver.solve(myRubik,firstFloorTree, secondFloorTree, thirdFloorTree);
         mySolution.applyToRubik(myRubik);
         mySolution.print();
-        long endTime = System.nanoTime();
-        Console.Write("Elapsed Time=%d seconds", ((endTime - beginningTime) / 1000000000));
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
+           
+        Console.Write("Elapsed Time=%d seconds",elapsedTime);
 //27-12-2017: started 11:39 PM, Failed
         myRubik.getPermutation().print();
     }

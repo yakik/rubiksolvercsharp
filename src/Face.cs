@@ -8,7 +8,7 @@ namespace CSharpRubikSolver
 {
 
     public enum Face {
-        U, D, R, L, F, B/*, NOTDEFINED('Z', 9)*/; //don't change this sequence, for Rubik's sake!
+        U, D, R, L, F, B/*, NOTDEFINED('Z', 9)*/ //don't change this sequence, for Rubik's sake!
 
     }
 

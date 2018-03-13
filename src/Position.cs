@@ -9,32 +9,32 @@ namespace CSharpRubikSolver
 
 public class Position {
 
-    private Face g_faceOrder[][] = {
-            {Face.F, Face.L, Face.B, Face.R}, {Face.R, Face.B, Face.L, Face.F
-    }, {Face.U, Face.B, Face.D, Face.F
-    }, {Face.U, Face.F, Face.D, Face.B
-    }, {Face.U, Face.R, Face.D, Face.L
-    }, {Face.U, Face.L, Face.D, Face.R
+    private Face[][] g_faceOrder = {
+            new Face[]{Face.F, Face.L, Face.B, Face.R}, new Face[]{Face.R, Face.B, Face.L, Face.F
+    }, new Face[]{Face.U, Face.B, Face.D, Face.F
+    }, new Face[]{Face.U, Face.F, Face.D, Face.B
+    },new Face[] {Face.U, Face.R, Face.D, Face.L
+    },new Face[] {Face.U, Face.L, Face.D, Face.R
     }
     };
     private Face c_currentUp;
     private Face c_currentFront;
 
-    Position(Face p_Up, Face p_Front) {
+        public Position(Face p_Up, Face p_Front) {
         c_currentUp = p_Up;
         c_currentFront = p_Front;
     }
 
-    Position() {
+        public Position() {
         c_currentUp = Face.U;
         c_currentFront = Face.F;
     }
 
-    String getString() {
-        return String.format("%c, %c", c_currentUp.getIntOfChar(), c_currentFront.getIntOfChar());
+        public String getString() {
+        return String.Format("%c, %c", c_currentUp.getIntOfChar(), c_currentFront.getIntOfChar());
     }
 
-    void rotate(Rotation p_rotation) {
+        public void rotate(Rotation p_rotation) {
         Face l_temp;
         Face l_face = p_rotation.getFace();
         Direction l_direction = p_rotation.getDirection();
@@ -66,7 +66,7 @@ public class Position {
 public Position getCopy(){
         return new Position(c_currentUp,c_currentFront);
 }
-    Face getFace(Face p_viewpoint) {
+        public Face getFace(Face p_viewpoint) {
         if (p_viewpoint == Face.U)
             return c_currentUp;
         else if (p_viewpoint == Face.D)
@@ -76,22 +76,22 @@ public Position getCopy(){
     }
 
 
-    Face getHorizonalFacebyVirtual(Face p_viewpoint) {
+        public Face getHorizonalFacebyVirtual(Face p_viewpoint) {
         int i = 0;
 
         while (g_faceOrder[c_currentUp.getInt()][i] != c_currentFront && i < 4)
             i++;
         switch (p_viewpoint) {
-            case F:
+            case Face.F:
                 return g_faceOrder[c_currentUp.getInt()][i];
 
-            case L:
+            case Face.L:
                 return g_faceOrder[c_currentUp.getInt()][(i + 1) % 4];
 
-            case B:
+            case Face.B:
                 return g_faceOrder[c_currentUp.getInt()][(i + 2) % 4];
 
-            case R:
+            case Face.R:
                 return g_faceOrder[c_currentUp.getInt()][(i + 3) % 4];
 
             default:
@@ -100,7 +100,7 @@ public Position getCopy(){
         }
     }
 
-    boolean equals(Position p_position) {
+        public bool equals(Position p_position) {
         return ((c_currentUp == p_position.c_currentUp) &&
                 (c_currentFront == p_position.c_currentFront));
     }

@@ -8,7 +8,7 @@ namespace CSharpRubikSolver
 {
 
 public class FaceFactory {
-    static Face getFaceByInt(int intValue) {
+    public static Face getFaceByInt(int intValue) {
         switch (intValue) {
             case 3:
                 return Face.L;

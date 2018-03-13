@@ -9,10 +9,10 @@ namespace CSharpRubikSolver
 
 public class Solver {
 
-    Solver() {
+        public Solver() {
     }
 
-    Solution solve(Rubik p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
+        public Solution solve(Rubik p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
 
         int l_numberOfCubicleInPlace;
         Permutation l_permutation = p_rubik.getPermutation();
@@ -31,7 +31,7 @@ public class Solver {
            Console.Write("Searching %d",l_solutionToDev.getPermutation().getValue(targetFloor));
             if (l_solutionManager.getBestValue()>l_solutionToDev.getPermutation().getValue(targetFloor)+14)
             {
-                System.out.println("Couldn't Find a Solution");
+                Console.WriteLine("Couldn't Find a Solution");
                 return l_solutionManager.getBest();
             }
             if (targetFloor == 1)
@@ -114,7 +114,7 @@ public class Solver {
                //     if (depth == 1) Console.Write("Hi,value=%d\n",l_resultPermutation.getValue(p_floor));
                 }
                 if (p_floor==3 && depth==0) {
-                  //  System.out.println("Hi");
+                  //  Console.WriteLine("Hi");
                     searchTree(p_minimumValue, p_tree, l_rubik, p_solutionManager,
                             new Solution(l_rotationLinkedList, l_resultPermutation, p_prevSolution), p_floor, 1);
 

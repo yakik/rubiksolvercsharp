@@ -8,15 +8,15 @@ namespace CSharpRubikSolver
 {
 
 public class Location {
-    boolean c_isEdge;
+    bool c_isEdge;
     private Face c_face0;
     private Face c_face1;
     private Face c_face2;
 
-    Location() {
+    public Location() {
     }
 
-    boolean containsFace(Face p_face) {
+    public bool containsFace(Face p_face) {
         if (p_face == c_face0 || p_face == c_face1 || (!c_isEdge && (p_face == c_face2)))
             return true;
         else
@@ -30,7 +30,7 @@ public class Location {
             return new Location(c_face0, c_face1, c_face2);
     }
 
-    Location(Face p_face0, Face p_face1, Face p_face2) {
+    public Location(Face p_face0, Face p_face1, Face p_face2) {
         Face l_tmp;
         c_isEdge = false;
         c_face0 = p_face0;
@@ -55,7 +55,7 @@ public class Location {
 
     }
 
-    Location(Face p_face0, Face p_face1) {
+    public Location(Face p_face0, Face p_face1) {
         c_isEdge = true;
         //       c_face2 = Face.NOTDEFINED;
         c_face0 = p_face0;
@@ -69,19 +69,19 @@ public class Location {
         }
     }
 
-    boolean isEdge() {
+    public bool isEdge() {
         return c_isEdge;
     }
 
-    Face getFace0() {
+        public Face getFace0() {
         return c_face0;
     }
 
-    Face getFace1() {
+        public Face getFace1() {
         return c_face1;
     }
 
-    int getFloor() {
+        public int getFloor() {
         if (this.equals(new Location(Face.U, Face.L, Face.F))) return 3;
         if (this.equals(new Location(Face.U, Face.L, Face.B))) return 3;
         if (this.equals(new Location(Face.U, Face.R, Face.F))) return 3;
@@ -108,18 +108,18 @@ public class Location {
         return 0;
     }
 
-    Face getFace2() {
+        public Face getFace2() {
 //        if (isEdge())
 //            return Face.NOTDEFINED;
 //        else
         return c_face2;
     }
 
-//	int getValue() {
-//		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216);
-//	}
+        //	int getValue() {
+        //		return (getFace0() * 1 + getFace1() * 6 + getFace2() * 36 + isEdge() * 216);
+        //	}
 
-    boolean equals(Location p_location) {
+        public bool equals(Location p_location) {
         return ((c_face0 == p_location.c_face0) &&
                 (c_face1 == p_location.c_face1) &&
                 (c_face2 == p_location.c_face2) &&
@@ -127,11 +127,11 @@ public class Location {
     }
 
 
-    String getString() {
+    public String getString() {
         if (c_isEdge)
-            return String.format("%c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar());
+            return String.Format("%c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar());
         else {
-            return String.format("%c, %c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar(), c_face2.getIntOfChar());
+            return String.Format("%c, %c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar(), c_face2.getIntOfChar());
         }
     }
 

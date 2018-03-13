@@ -15,38 +15,38 @@ public class Solution {
     private Solution c_prevSolution;
 
 
-    Solution(RotationLinkedList p_rotationLinkedList, Permutation p_permutation, Solution p_prevSolution) {
+        public Solution(RotationLinkedList p_rotationLinkedList, Permutation p_permutation, Solution p_prevSolution) {
         c_rotationLinkedList = p_rotationLinkedList.getCopy();
         c_permutation = p_permutation.getCopy();
         c_prevSolution = p_prevSolution;
     }
 
-    Permutation getPermutation() {
+        public Permutation getPermutation() {
         return c_permutation;
     }
 
-    RotationLinkedList getRotationLinkedList() {
+        public RotationLinkedList getRotationLinkedList() {
         return c_rotationLinkedList;
     }
 
-    Solution getPrevSolution() {
+        public Solution getPrevSolution() {
         return c_prevSolution;
     }
 
-    boolean equals(Solution p_solution)
+        public bool equals(Solution p_solution)
 
     {
         return (c_permutation == (p_solution.getPermutation()));
     }
 
-    void print() {
+        public void print() {
         if (c_prevSolution != null)
             c_prevSolution.print();
         c_rotationLinkedList.print();
         Console.Write("\n");
     }
 
-    void applyToRubik(Rubik p_rubik) {
+        public void applyToRubik(Rubik p_rubik) {
         if (c_prevSolution != null)
             c_prevSolution.applyToRubik(p_rubik);
         c_rotationLinkedList.applyToRubik(p_rubik);

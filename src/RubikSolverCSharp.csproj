@@ -51,7 +51,7 @@
     <Compile Include="Face.cs" />
     <Compile Include="FaceFactory.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="MyMain.cs" />
     <Compile Include="Permutation.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

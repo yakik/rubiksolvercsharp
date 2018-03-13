@@ -23,7 +23,7 @@ namespace CSharpRubikSolverTester
         RubikFileReader myReader = new RubikFileReader(("Test.txt"));
         int l_int;
         String l_readString = "";
-        while ((l_int = myReader.read())!=-1)
+        while ((l_int = myReader.Read())!=-1)
             l_readString+=(char)l_int;
         assertEquals(myNanoString,l_readString);
 
