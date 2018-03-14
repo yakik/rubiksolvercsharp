@@ -40,7 +40,7 @@ public class Rotation {
     public bool readFromFile(RubikFileReader p_reader) {
         int l_int;
         l_int = p_reader.read();
-        while ((l_int == ' '))
+        while ((l_int == ' ') || (l_int == 10))
             l_int = p_reader.read();
         if ((l_int == '\n') || (l_int == -1 /*EOF*/) || (l_int != '('))
             return false;
@@ -68,7 +68,7 @@ public class Rotation {
     }
 
     public void print() {
-        Console.Write("({0},{1})", c_face.getIntOfChar(), c_direction.getString());
+        Console.Write("({0},{1})", c_face.getChar(), c_direction.getString());
     }
 
     public Rotation getReverse() {

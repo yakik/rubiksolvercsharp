@@ -32,8 +32,8 @@ namespace CSharpRubikSolverUTests
         public void loadRotationTreeFromFile() {
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         RotationTree l_tree = new RotationTree();
-        forTestRubikFileReader myTestReader = new forTestRubikFileReader("(5,1) (3,1) (1,0) (3,0) (4,0) (3,0) (4,1) (1,1) \n" +
-                "(5,1) (3,1) (1,0) (3,0) (5,0) \n");
+        forTestRubikFileReader myTestReader = new forTestRubikFileReader("(5,1) (3,1) (1,0) (3,0) (4,0) (3,0) (4,1) (1,1) \r\n" +
+                "(5,1) (3,1) (1,0) (3,0) (5,0) \r\n");
         RotationTreeLoader.loadRotationTreeFromFile(myTestReader, l_tree);
         Assert.AreEqual(Direction.CCW,l_tree.getRotationLinkedList(1).get(0).getDirection());
     }
