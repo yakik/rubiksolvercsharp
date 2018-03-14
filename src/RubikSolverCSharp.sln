@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RubikSolverCSharp", "RubikSolverCSharp.csproj", "{8E39C268-8F0E-4E25-92E8-5CB70BEAF487}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\test\UnitTests.csproj", "{2E6CE1C9-D6B1-433A-9128-6DF327FACFBA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E39C268-8F0E-4E25-92E8-5CB70BEAF487} = {8E39C268-8F0E-4E25-92E8-5CB70BEAF487}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

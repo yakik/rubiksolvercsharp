@@ -12,16 +12,16 @@ namespace CSharpRubikSolver
 public class RubikFileWriter {
 
     StreamWriter c_fileWriter;
-    bool c_fileIsOK;
+    //bool c_fileIsOK;
 
 
         public RubikFileWriter(String p_fileLocation) {
         try {
             c_fileWriter = new StreamWriter(p_fileLocation);
-            c_fileIsOK = true;
+      //      c_fileIsOK = true;
         } catch (IOException ex) {
                 Console.WriteLine(ex.Message);
-                c_fileIsOK = false;
+        //        c_fileIsOK = false;
         }
     }
 

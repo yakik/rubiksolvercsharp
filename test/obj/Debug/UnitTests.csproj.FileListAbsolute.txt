@@ -1,0 +1,13 @@
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\obj\Debug\UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\UnitTestProject1.dll
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\UnitTestProject1.pdb
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\ConsoleApplication.exe
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\ConsoleApplication.pdb
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\ConsoleApplication.exe.config
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\obj\Debug\UnitTestProject1.dll
+C:\Users\Yaki\OneDrive\DevProj\cSharpRubik\test\obj\Debug\UnitTestProject1.pdb

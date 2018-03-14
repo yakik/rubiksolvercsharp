@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
     [TestClass]
@@ -15,12 +15,12 @@ namespace CSharpRubikSolverTester
     [TestMethod]
     void getFaceByInt() {
         FaceFactory myFactory = new FaceFactory();
-        assertEquals(Face.L, FaceFactory.getFaceByInt(3));
-        assertEquals(Face.R, FaceFactory.getFaceByInt(2));
-        assertEquals(Face.U, FaceFactory.getFaceByInt(0));
-        assertEquals(Face.D, FaceFactory.getFaceByInt(1));
-        assertEquals(Face.F, FaceFactory.getFaceByInt(4));
-        assertEquals(Face.B, FaceFactory.getFaceByInt(5));
+        Assert.AreEqual(Face.L, FaceFactory.getFaceByInt(3));
+        Assert.AreEqual(Face.R, FaceFactory.getFaceByInt(2));
+        Assert.AreEqual(Face.U, FaceFactory.getFaceByInt(0));
+        Assert.AreEqual(Face.D, FaceFactory.getFaceByInt(1));
+        Assert.AreEqual(Face.F, FaceFactory.getFaceByInt(4));
+        Assert.AreEqual(Face.B, FaceFactory.getFaceByInt(5));
 
 
     }

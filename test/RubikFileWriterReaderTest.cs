@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
 
@@ -16,16 +16,15 @@ namespace CSharpRubikSolverTester
     [TestMethod]
     void write() {
         RubikFileWriter myWriter = new RubikFileWriter("Test.txt");
-        long myNano = System.nanoTime();
-        String myNanoString = String.format("%d",myNano);
-        myWriter.write(myNanoString);
+       
+        myWriter.write("testWrite");
         myWriter.close();
         RubikFileReader myReader = new RubikFileReader(("Test.txt"));
         int l_int;
         String l_readString = "";
-        while ((l_int = myReader.Read())!=-1)
+        while ((l_int = myReader.read())!=-1)
             l_readString+=(char)l_int;
-        assertEquals(myNanoString,l_readString);
+        Assert.Equals("testWrite",l_readString);
 
 
 

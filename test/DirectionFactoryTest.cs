@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
 
@@ -16,8 +16,8 @@ namespace CSharpRubikSolverTester
     [TestMethod]
     void getDirectionByInt() {
         DirectionFactory myFactory = new DirectionFactory();
-        assertEquals(Direction.CW, DirectionFactory.getDirectionByInt(0));
-        assertEquals(Direction.CCW, DirectionFactory.getDirectionByInt(1));
+        Assert.AreEqual(Direction.CW, DirectionFactory.getDirectionByInt(0));
+        Assert.AreEqual(Direction.CCW, DirectionFactory.getDirectionByInt(1));
     }
 }
 }

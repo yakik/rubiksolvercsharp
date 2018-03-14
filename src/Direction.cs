@@ -12,7 +12,7 @@ namespace CSharpRubikSolver
         CW, CCW
     }
 
-    static class DirectionMethods
+    public static class DirectionMethods
     {
 
 

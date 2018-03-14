@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
-class forTestRubikFileReader extends RubikFileReader {
+class forTestRubikFileReader : RubikFileReader {
 
     private String c_stringToReturn;
     private int indexRead = 0;
@@ -19,9 +19,9 @@ class forTestRubikFileReader extends RubikFileReader {
     }
 
 
-    public int read() {
-        if (indexRead < c_stringToReturn.length())
-            return c_stringToReturn.charAt(indexRead++);
+    public override int read() {
+        if (indexRead < c_stringToReturn.Length)
+            return c_stringToReturn[indexRead++];
         else
             return -1;
     }

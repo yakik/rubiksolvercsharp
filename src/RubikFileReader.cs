@@ -27,7 +27,7 @@ public class RubikFileReader {
         }
     }
 
-        public int read() {
+        public virtual int read() {
         if (!c_fileIsOK)
             return -1;
         else

@@ -16,7 +16,7 @@ namespace CSharpRubikSolver
      public static class FaceMethods
     {
 
-        public static int getIntOfChar(this Face face) {              // Getter
+        public static int getIntOfChar(this Face face) {              
             switch (face)
             {
                 case Face.U:

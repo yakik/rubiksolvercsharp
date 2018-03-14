@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
 
@@ -18,9 +18,9 @@ namespace CSharpRubikSolverTester
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
         Permutation myPermutation = myRubik.getPermutation();
-        assertEquals(10, myPermutation.getValue(1), "first floor");
-        assertEquals(14, myPermutation.getValue(2), "second floor");
-        assertEquals(24, myPermutation.getValue(3), "third floor");
+        Assert.AreEqual(10, myPermutation.getValue(1), "first floor");
+        Assert.AreEqual(14, myPermutation.getValue(2), "second floor");
+        Assert.AreEqual(24, myPermutation.getValue(3), "third floor");
 
     }
 
@@ -36,7 +36,7 @@ namespace CSharpRubikSolverTester
                     , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
         }
 
-        assertEquals(true, Apermutation.equals(Bpermutation));
+        Assert.AreEqual(true, Apermutation.equals(Bpermutation));
 
     }
     [TestMethod]
@@ -55,8 +55,8 @@ namespace CSharpRubikSolverTester
         Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R)
                 , new Location(Face.U, Face.L), new Position(Face.U, Face.F)));
 
-        assertEquals(false, Apermutation.equals(Bpermutation),"first floor");
-        assertEquals(false, Apermutation.equals(Bpermutation),"third floor");
+        Assert.AreEqual(false, Apermutation.equals(Bpermutation),"first floor");
+        Assert.AreEqual(false, Apermutation.equals(Bpermutation),"third floor");
 
     }
 }

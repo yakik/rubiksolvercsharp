@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
 
 
 public class AssistAssertRubik {
     static void myAssertEdge(Face p_firstFace, Face p_secondFace, Rubik p_rubik){
-        assertEquals(true, (new Location(p_firstFace, p_secondFace))
+        Assert.AreEqual(true, (new Location(p_firstFace, p_secondFace))
                         .equals(p_rubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(p_firstFace, p_secondFace)))
-                ,"Problem with edge "+Character.toString(p_firstFace.getChar())
-                        +" / " +Character.toString(p_secondFace.getChar()));
+                ,"Problem with edge "+Char.ToString(p_firstFace.getChar())
+                        +" / " +Char.ToString(p_secondFace.getChar()));
     }
 
     static void myAssertCorner(Face p_firstFace, Face p_secondFace, Face p_thirdFace, Rubik p_rubik){
-        assertEquals(true, (new Location(p_firstFace, p_secondFace, p_thirdFace))
+        Assert.AreEqual(true, (new Location(p_firstFace, p_secondFace, p_thirdFace))
                         .equals(p_rubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(p_firstFace, p_secondFace, p_thirdFace)))
-                ,"Problem with corner "+Character.toString(p_firstFace.getChar())
-                        +" / " +Character.toString(p_secondFace.getChar())
-                        +" / " +Character.toString(p_thirdFace.getChar()));
+                ,"Problem with corner "+Char.ToString(p_firstFace.getChar())
+                        +" / " +Char.ToString(p_secondFace.getChar())
+                        +" / " +Char.ToString(p_thirdFace.getChar()));
     }
 
-    static void checkEntireCube(Rubik p_rubik){
+    public static void checkEntireCube(Rubik p_rubik){
         myAssertEdge(Face.U, Face.L, p_rubik);
         myAssertEdge(Face.U, Face.R, p_rubik);
         myAssertEdge(Face.U, Face.F, p_rubik);

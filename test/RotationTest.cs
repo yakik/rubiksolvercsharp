@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverTester
+namespace CSharpRubikSolver
 {
 
 
@@ -18,8 +18,8 @@ namespace CSharpRubikSolverTester
         forTestRubikFileReader myTestReader = new forTestRubikFileReader(stringToRead);
         testRotation.readFromFile(myTestReader);
 
-        assertEquals(expectedFace, testRotation.getFace());
-        assertEquals(expectedDirection, testRotation.getDirection());
+        Assert.AreEqual(expectedFace, testRotation.getFace());
+        Assert.AreEqual(expectedDirection, testRotation.getDirection());
 
     }
 
@@ -27,7 +27,7 @@ namespace CSharpRubikSolverTester
     [TestMethod]
     void testRotationEquals() {
         Rotation myRotation = new Rotation(Face.F, Direction.CW);
-        assertEquals(true, myRotation.equals((new Rotation(Face.F, Direction.CW))));
+        Assert.AreEqual(true, myRotation.equals((new Rotation(Face.F, Direction.CW))));
     }
     [TestMethod]
     void rotationRead_B_CCW() {
