@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class LocationTest {
+    public class LocationTest {
 
     [TestMethod]
-    void isEdge() {
+        public void isEdge() {
         Location myLocation = new Location(Face.D,Face.L, Face.F);
         Assert.AreEqual(false,myLocation.isEdge());
         myLocation = new Location(Face.D,Face.L);
@@ -22,7 +22,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void getFaces() {
+        public void getFaces() {
         Location myLocation = new Location(Face.D,Face.L, Face.F);
         //taking into account facecs are sorted according to int value
         Assert.AreEqual(Face.D,myLocation.getFace0());
@@ -31,7 +31,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void equals() {
+        public void equals() {
         Location myLocation = new Location(Face.D,Face.L, Face.F);
         Location mySecondLocation = new Location(Face.L,Face.F, Face.D);
         Location myThirdLocation = new Location(Face.R, Face.F, Face.D);
@@ -40,7 +40,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void testGetFloor() {
+        public void testGetFloor() {
         Assert.AreEqual(3, new Location(Face.U,Face.L, Face.F).getFloor(),"1");
         Assert.AreEqual(3, new Location(Face.U,Face.L, Face.B).getFloor(),"2");
         Assert.AreEqual(3, new Location(Face.U,Face.R, Face.F).getFloor(),"3");
@@ -69,7 +69,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void getString() {
+        public void getString() {
         Location myLocation = new Location(Face.D,Face.L, Face.F);
         Assert.AreEqual("D, L, F", myLocation.getString());
         myLocation = new Location(Face.D,Face.L);

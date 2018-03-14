@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
     [TestClass]
-    class SolverTest {
+    public class SolverTest {
 
 
     [TestMethod]
-    void simpleRotations() {
+        public void simpleRotations() {
         Rubik myRubik = new Rubik();
         for (int i=0;i<20;i++) {
             myRubik.rotateFace(new Rotation(Face.U, Direction.CW));
@@ -49,7 +49,7 @@ namespace CSharpRubikSolver
 
 
     [TestMethod]
-    void simpleSolver() {
+        public void simpleSolver() {
         Rubik myRubik = new Rubik();
 
         myRubik.rotateFace(new Rotation(Face.U, Direction.CW));

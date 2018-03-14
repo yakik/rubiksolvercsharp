@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
-class forTestRubikFileReader : RubikFileReader {
+    public class forTestRubikFileReader : RubikFileReader {
 
     private String c_stringToReturn;
     private int indexRead = 0;

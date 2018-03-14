@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class PermutationTest {
+    public class PermutationTest {
 
     [TestMethod]
-    void getValue() {
+        public void getValue() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
         Permutation myPermutation = myRubik.getPermutation();
@@ -25,7 +25,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void testEqualsEqual() {
+        public void testEqualsEqual() {
         Permutation Apermutation = new Permutation();
         Permutation Bpermutation = new Permutation();
 
@@ -40,7 +40,7 @@ namespace CSharpRubikSolver
 
     }
     [TestMethod]
-    void testEqualsFirstFloor() {
+        public void testEqualsFirstFloor() {
         Permutation Apermutation = new Permutation();
         Permutation Bpermutation = new Permutation();
 

@@ -129,9 +129,9 @@ public class Location {
 
     public String getString() {
         if (c_isEdge)
-            return String.Format("%c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar());
+            return String.Format("{0}, {1}", c_face0.getChar() , c_face1.getChar());
         else {
-            return String.Format("%c, %c, %c", c_face0.getIntOfChar(), c_face1.getIntOfChar(), c_face2.getIntOfChar());
+            return String.Format("{0}, {1}, {2}", c_face0.getChar(), c_face1.getChar(), c_face2.getChar());
         }
     }
 

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class FaceTest {
+    public class FaceTest {
     [TestMethod]
-    void testFaceGetIntGetChar() {
+        public void testFaceGetIntGetChar() {
         Face myFace = Face.D;
         Assert.AreEqual(1, myFace.getInt());
         Assert.AreEqual('D', myFace.getIntOfChar());
@@ -35,14 +35,14 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void testFaceEquals() {
+        public void testFaceEquals() {
         Face myFace = Face.D;
         Assert.AreEqual(Face.D, myFace);
         Assert.AreEqual(true, myFace==Face.D);
     }
 
     [TestMethod]
-    void testFaceGetOpposite() {
+        public void testFaceGetOpposite() {
         Face myFace = Face.D;
         Assert.AreEqual(Face.U, myFace.getOpposite());
         myFace = Face.F;

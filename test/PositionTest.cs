@@ -6,49 +6,49 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class PositionTest {
+    public class PositionTest {
 
     [TestMethod]
-    void getString() {
+        public void getString() {
         Position myPosition = new Position(Face.U,Face.F);
         Assert.AreEqual("U, F",myPosition.getString());
     }
 
     [TestMethod]
-    void rotateCW_U() {
+        public void rotateCW_U() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.F, Direction.CW));
         Assert.AreEqual(Face.L,myPosition.getFace(Face.U));
     }
 
     [TestMethod]
-    void rotateCW_D() {
+        public void rotateCW_D() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.F, Direction.CW));
         Assert.AreEqual(Face.R,myPosition.getFace(Face.D));
     }
 
     [TestMethod]
-    void rotateCCW() {
+        public void rotateCCW() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.F, Direction.CCW));
         Assert.AreEqual(Face.R,myPosition.getFace(Face.U));
     }
 
     [TestMethod]
-    void rotateCCW_D() {
+        public void rotateCCW_D() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.F, Direction.CCW));
         Assert.AreEqual(Face.L,myPosition.getFace(Face.D));
     }
 
     [TestMethod]
-    void moreRotationTests() {
+        public void moreRotationTests() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.L, Direction.CW));
         Assert.AreEqual(true,myPosition.equals(new Position(Face.B,Face.U)));
@@ -59,25 +59,25 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void rotateCCW_DD() {
+        public void rotateCCW_DD() {
         Position myPosition = new Position(Face.U, Face.F);
         myPosition.rotate(new Rotation(Face.D, Direction.CCW));
         Assert.AreEqual(Face.D,myPosition.getFace(Face.D));
     }
     [TestMethod]
-    void getFace() {
+        public void getFace() {
     }
 
     [TestMethod]
-    void getHorizonalFacebyVirtual() {
+        public void getHorizonalFacebyVirtual() {
     }
 
     [TestMethod]
-    void equals() {
+        public void equals() {
     }
 
     [TestMethod]
-    void rotate1() {
+        public void rotate1() {
     }
 }
 }

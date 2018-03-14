@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class RubikFileWriterReaderTest {
+    public class RubikFileWriterReaderTest {
 
     [TestMethod]
-    void write() {
+        public void write() {
         RubikFileWriter myWriter = new RubikFileWriter("Test.txt");
        
         myWriter.write("testWrite");

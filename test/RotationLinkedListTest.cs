@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class RotationLinkedListTest {
+    public class RotationLinkedListTest {
 
     [TestMethod]
-    void isRedundantCW() {
+        public void isRedundantCW() {
         RotationLinkedList myList = new RotationLinkedList();
                 myList.addRotation(new Rotation(Face.F,Direction.CW));
         Assert.AreEqual(true,myList.isRedundant(new Rotation(Face.F, Direction.CW)));
@@ -23,7 +23,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void testWriteRead() {
+        public void testWriteRead() {
         RotationLinkedList myList = new RotationLinkedList();
         myList.addRotation(new Rotation(Face.F,Direction.CW));
         myList.addRotation(new Rotation(Face.U,Direction.CCW));
@@ -40,7 +40,7 @@ namespace CSharpRubikSolver
 
 
     [TestMethod]
-    void isRedundantCCW() {
+        public void isRedundantCCW() {
         RotationLinkedList myList = new RotationLinkedList();
         myList.addRotation(new Rotation(Face.F,Direction.CCW));
         myList.addRotation(new Rotation(Face.F,Direction.CCW));

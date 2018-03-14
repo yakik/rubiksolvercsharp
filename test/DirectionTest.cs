@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class DirectionTest {
+    public class DirectionTest {
     [TestMethod]
-    void testDirectionGetIntGetChar() {
+        public void testDirectionGetIntGetChar() {
         Direction myDirection = Direction.CW;
         Assert.AreEqual(0, myDirection.getInt());
         Assert.AreEqual("CW", myDirection.getString());
@@ -23,13 +23,13 @@ namespace CSharpRubikSolver
            }
 
     [TestMethod]
-    void testDirectionEquals() {
+        public void testDirectionEquals() {
         Direction myDirection = Direction.CW;
         Assert.AreEqual(Direction.CW, myDirection);
         Assert.AreEqual(true, myDirection==Direction.CW);
     }
     [TestMethod]
-    void DirectionOpposite() {
+        public void DirectionOpposite() {
         Direction myDirection = Direction.CW;
         Assert.AreEqual(Direction.CCW, myDirection.getOpposite());
         myDirection = Direction.CCW;

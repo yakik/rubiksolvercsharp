@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
     [TestClass]
-    class RotationTreeLoaderTest {
+    public class RotationTreeLoaderTest {
 
     [TestMethod]
-    void loadSearchTree() {
+        public void loadSearchTree() {
 //
     }
 
     [TestMethod]
-    void numberNodesRotationTree() {
+        public void numberNodesRotationTree() {
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         RotationTree l_tree = new RotationTree();
         RotationTreeLoader.loadRotationTreeFromStandard(l_tree, l_rotationLinkedList, 4);
@@ -29,7 +29,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void loadRotationTreeFromFile() {
+        public void loadRotationTreeFromFile() {
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         RotationTree l_tree = new RotationTree();
         forTestRubikFileReader myTestReader = new forTestRubikFileReader("(5,1) (3,1) (1,0) (3,0) (4,0) (3,0) (4,1) (1,1) \n" +
@@ -39,7 +39,7 @@ namespace CSharpRubikSolver
     }
 
     [TestMethod]
-    void writeToFileXLevelsSecondAndThird() {
+        public void writeToFileXLevelsSecondAndThird() {
         RotationTreeLoader.findGoodRotationLinks("tstFirstFloor.txt", "tstSecondFloor.txt"
         ,"tstThirdFloor.txt",2);
         RotationTree firstFloorTree = new RotationTree();
@@ -59,7 +59,7 @@ namespace CSharpRubikSolver
 
 
     [TestMethod]
-    void loadRotationTreeFromStandard() {
+        public void loadRotationTreeFromStandard() {
         RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
         RotationTree l_tree = new RotationTree();
         RotationTreeLoader.loadRotationTreeFromStandard(l_tree, l_rotationLinkedList, 1);

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolver
+namespace CSharpRubikSolverUTests
 {
 
 
     [TestClass]
-    class RubikTest {
+    public class RubikTest {
 
     [TestMethod]
-    void setPermutationTest() {
+        public void setPermutationTest() {
         Permutation myPermutation = new Permutation();
         myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.U), new Location(Face.F, Face.U), new Position(Face.U, Face.F)));
         myPermutation.addCubicleData(new CubeCubicle(new Location(Face.F, Face.R), new Location(Face.F, Face.R), new Position(Face.U, Face.F)));
@@ -57,7 +57,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
     }
     [TestMethod]
-    void testChangesOnlyInThirdFloor_partII(){
+        public void testChangesOnlyInThirdFloor_partII(){
         Permutation myPermutation = new Permutation();
         Rubik myCube = new Rubik();
 
@@ -72,7 +72,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
 
     [TestMethod]
-    void testChangesOnlyInThirdFloor_partI(){
+        public void testChangesOnlyInThirdFloor_partI(){
         Permutation myPermutation = new Permutation();
         Rubik myCube = new Rubik();
 
@@ -86,7 +86,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
         }
 
     [TestMethod]
-    void testIsDifferentItemsOnlyInSecondFloorLessThanThree_partI(){
+        public void testIsDifferentItemsOnlyInSecondFloorLessThanThree_partI(){
         Permutation myPermutation = new Permutation();
         Rubik myCube = new Rubik();
 
@@ -105,7 +105,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
             }
 
     [TestMethod]
-    void testIsDifferentItemsOnlyInSecondFloorLessThanThree_partII(){
+        public void testIsDifferentItemsOnlyInSecondFloorLessThanThree_partII(){
         Permutation myPermutation = new Permutation();
         Rubik myCube = new Rubik();
 
@@ -125,7 +125,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
 
     [TestMethod]
-    void testIsDifferentItemsInFirstFloorLessThanThree(){
+        public void testIsDifferentItemsInFirstFloorLessThanThree(){
         Permutation myPermutation = new Permutation();
         Rubik myCube = new Rubik();
 
@@ -148,7 +148,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
 
     [TestMethod]
-    void constuctorTest() {
+        public void constuctorTest() {
         Rubik myRubik = new Rubik();
         int numberOfAssertions = 0;
         foreach (Face firstFaceDimension in Enum.GetValues(typeof(Face))) {
@@ -171,7 +171,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
 
     [TestMethod]
-    void positionTest() {
+        public void positionTest() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.U, Direction.CW));
         Assert.AreEqual(true, myRubik
@@ -200,7 +200,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     }
 
     [TestMethod]
-    void positionTest2() {
+        public void positionTest2() {
         Rubik myRubik = new Rubik();
 
 
@@ -224,7 +224,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
 
 
     [TestMethod]
-    void rotateTest1() {
+        public void rotateTest1() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
         Assert.AreEqual(true, (new Location(Face.F, Face.D))
@@ -233,7 +233,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     }
 
     [TestMethod]
-    void rotateTest2() {
+        public void rotateTest2() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.D, Direction.CCW));
         Assert.AreEqual(true, (new Location(Face.D, Face.R))
@@ -241,7 +241,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     }
 
     [TestMethod]
-    void rotateTest3() {
+        public void rotateTest3() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.D, Direction.CCW));
         Assert.AreEqual(true, (new Location(Face.D, Face.R, Face.B))
@@ -249,7 +249,7 @@ myRubik.rotateFace(new Rotation(Face.R, Direction.CW));
     }
 
     [TestMethod]
-    void TestgetOriginalLocationOfCurrentCubicleInLocation() {
+        public void TestgetOriginalLocationOfCurrentCubicleInLocation() {
         Rubik myRubik = new Rubik();
         myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
         Location yaki = myRubik.getOriginalLocationOfCurrentCubicleInLocation(new Location(Face.D, Face.F));
