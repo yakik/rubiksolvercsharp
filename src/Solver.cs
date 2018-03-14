@@ -28,7 +28,7 @@ public class Solver {
         while ((l_solutionToDev = l_solutionManager.getBestUndeveloped()) != null &&
                 l_solutionManager.getBestValue() < 40) {
             int targetFloor = getTargetFloor(l_solutionToDev.getPermutation());
-           Console.Write("Searching %d",l_solutionToDev.getPermutation().getValue(targetFloor));
+           Console.Write("Searching {0}",l_solutionToDev.getPermutation().getValue(targetFloor));
             if (l_solutionManager.getBestValue()>l_solutionToDev.getPermutation().getValue(targetFloor)+14)
             {
                 Console.WriteLine("Couldn't Find a Solution");
@@ -43,7 +43,7 @@ public class Solver {
 
             l_floor = getTargetFloor(l_solutionManager.getBestValue());
 
-            Console.Write("Floor=%d, Best yet:%d\n", l_floor, l_solutionManager.getBestValue());
+            Console.Write("Floor={0}, Best yet:{1}\n", l_floor, l_solutionManager.getBestValue());
             // l_solutionManager.getBest().print();
 
 
@@ -111,7 +111,7 @@ public class Solver {
 
                 if (l_resultPermutation.getValue(p_floor) >= p_minimumValue) {
                     p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, l_resultPermutation.getValue(p_floor), p_floor);
-               //     if (depth == 1) Console.Write("Hi,value=%d\n",l_resultPermutation.getValue(p_floor));
+               //     if (depth == 1) Console.Write("Hi,value={0}\n",l_resultPermutation.getValue(p_floor));
                 }
                 if (p_floor==3 && depth==0) {
                   //  Console.WriteLine("Hi");

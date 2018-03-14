@@ -84,7 +84,7 @@ public class MyMain {
             ts.Hours, ts.Minutes, ts.Seconds,
             ts.Milliseconds / 10);
            
-        Console.Write("Elapsed Time=%d seconds",elapsedTime);
+        Console.Write("Elapsed Time={0} seconds",elapsedTime);
 //27-12-2017: started 11:39 PM, Failed
         myRubik.getPermutation().print();
     }

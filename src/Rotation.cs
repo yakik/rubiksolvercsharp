@@ -33,7 +33,7 @@ public class Rotation {
     }
 
     public void writeToFile(RubikFileWriter p_write){
-        String l_toWrite = String.Format(" (%d,%d)",c_face.getInt(),c_direction.getInt());
+        String l_toWrite = String.Format(" ({0},{1})",c_face.getInt(),c_direction.getInt());
         p_write.write(l_toWrite);
     }
 
@@ -68,7 +68,7 @@ public class Rotation {
     }
 
     public void print() {
-        Console.Write("(%c,%s)", c_face.getIntOfChar(), c_direction.getString());
+        Console.Write("({0},{1})", c_face.getIntOfChar(), c_direction.getString());
     }
 
     public Rotation getReverse() {

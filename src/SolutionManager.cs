@@ -27,7 +27,7 @@ public class SolutionManager {
            if (/*(p_value>=32 && getBestValue()>=36) ||*/ (c_solutionList[p_value] as ArrayList).Count < 40) {
             (c_solutionList[p_value] as ArrayList).Add(new SolutionNode(new Solution(p_rotationLinkedList.getCopy(), p_permutation.getCopy(), p_prevSolution)));
 
-   //         Console.Write("Added Solution Value=%d, Index=%d\n", p_value, p_value);
+   //         Console.Write("Added Solution Value={0}, Index={0}\n", p_value, p_value);
         }
 
 

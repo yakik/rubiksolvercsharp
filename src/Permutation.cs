@@ -60,11 +60,11 @@ public class Permutation {
 
         public void print() {
         int i;
-        Console.Write("\nnumber of cubicles is %d\n", c_cubicles + 1);
+        Console.Write("\nnumber of cubicles is {0}\n", c_cubicles + 1);
         for (i = 0; i <= c_cubicles; i++) {
-            Console.Write("CubiclePlace Location:%s", c_Cube_cubicle[i].getLocation().getString());
-            Console.Write(" Cubicle Location:%s", c_Cube_cubicle[i].currentCubieOriginalLocation().getString());
-            Console.Write(" Cubicle Position:%s\n", c_Cube_cubicle[i].getCubiePosition().getString());
+            Console.Write("CubiclePlace Location:{0}", c_Cube_cubicle[i].getLocation().getString());
+            Console.Write(" Cubicle Location:{0}", c_Cube_cubicle[i].currentCubieOriginalLocation().getString());
+            Console.Write(" Cubicle Position:{0}\n", c_Cube_cubicle[i].getCubiePosition().getString());
         }
     }
 

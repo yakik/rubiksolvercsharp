@@ -73,7 +73,7 @@ public class RotationTreeLoader {
                 foreach (Direction direction in Enum.GetValues(typeof(Direction)))
                 {
             i++;
-            String myProgressString = p_progressString+String.Format(".%d",i);
+            String myProgressString = p_progressString+String.Format(".{0}",i);
                 Rotation newRotation = new Rotation(face,direction);
                 if (p_rotationLinkedList.isRedundant(newRotation))
                     continue;
