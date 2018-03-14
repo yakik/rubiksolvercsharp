@@ -41,17 +41,17 @@ namespace CSharpRubikSolver
             switch (face)
             {
                 case Face.U:
-                    return '0';
+                    return 'U';
                 case Face.D:
-                    return '1';
+                    return 'D';
                 case Face.R:
-                    return '2';
+                    return 'R';
                 case Face.L:
-                    return '3';
+                    return 'L';
                 case Face.F:
-                    return '4';
+                    return 'F';
                 case Face.B:
-                    return '5';
+                    return 'B';
                 default:
                     return '9';
             }

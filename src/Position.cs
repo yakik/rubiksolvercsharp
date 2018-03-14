@@ -31,7 +31,7 @@ public class Position {
     }
 
         public String getString() {
-        return String.Format("%c, %c", c_currentUp.getIntOfChar(), c_currentFront.getIntOfChar());
+        return String.Format("{0}, {1}", c_currentUp.getChar(), c_currentFront.getChar());
     }
 
         public void rotate(Rotation p_rotation) {
