@@ -16,22 +16,22 @@ namespace CSharpRubikSolverUTests
         public void testFaceGetIntGetChar() {
         Face myFace = Face.D;
         Assert.AreEqual(1, myFace.getInt());
-        Assert.AreEqual('D', myFace.getIntOfChar());
+        Assert.AreEqual('D', myFace.getChar());
         myFace = Face.F;
         Assert.AreEqual(4, myFace.getInt());
-        Assert.AreEqual('F', myFace.getIntOfChar());
+        Assert.AreEqual('F', myFace.getChar());
         myFace = Face.R;
         Assert.AreEqual(2, myFace.getInt());
-        Assert.AreEqual('R', myFace.getIntOfChar());
+        Assert.AreEqual('R', myFace.getChar());
         myFace = Face.U;
         Assert.AreEqual(0, myFace.getInt());
-        Assert.AreEqual('U', myFace.getIntOfChar());
+        Assert.AreEqual('U', myFace.getChar());
         myFace = Face.B;
         Assert.AreEqual(5, myFace.getInt());
-        Assert.AreEqual('B', myFace.getIntOfChar());
+        Assert.AreEqual('B', myFace.getChar());
         myFace = Face.L;
         Assert.AreEqual(3, myFace.getInt());
-        Assert.AreEqual('L', myFace.getIntOfChar());
+        Assert.AreEqual('L', myFace.getChar());
     }
 
     [TestMethod]

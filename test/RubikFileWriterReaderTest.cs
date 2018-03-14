@@ -24,7 +24,7 @@ namespace CSharpRubikSolverUTests
         String l_readString = "";
         while ((l_int = myReader.read())!=-1)
             l_readString+=(char)l_int;
-        Assert.Equals("testWrite",l_readString);
+        Assert.AreEqual("testWrite",l_readString);
 
 
 

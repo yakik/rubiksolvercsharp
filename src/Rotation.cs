@@ -46,9 +46,9 @@ public class Rotation {
             return false;
         else {
 
-            c_face = FaceFactory.getFaceByInt((p_reader.read()));
+            c_face = FaceFactory.getFaceByInt((int)Char.GetNumericValue((char)(p_reader.read())));
             p_reader.read();
-            c_direction = DirectionFactory.getDirectionByInt((p_reader.read()));
+            c_direction = DirectionFactory.getDirectionByInt((int)Char.GetNumericValue((char)(p_reader.read())));
             p_reader.read();
             return true;
         }

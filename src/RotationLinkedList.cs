@@ -42,7 +42,7 @@ namespace CSharpRubikSolver
 
         public void removeRotation()
         {
-            c_array.Remove(c_array.Count - 1);
+            c_array.RemoveAt(c_array.Count - 1);
         }
 
         public bool isRedundant(Rotation p_rotation)
