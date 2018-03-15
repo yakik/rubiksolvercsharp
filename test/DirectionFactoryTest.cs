@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverUTests
-{
+namespace CSharpRubikSolverUTests {
 
 
     [TestClass]
     public class DirectionFactoryTest {
 
-    [TestMethod]
+        [TestMethod]
         public void getDirectionByInt() {
-        DirectionFactory myFactory = new DirectionFactory();
-        Assert.AreEqual(Direction.CW, DirectionFactory.getDirectionByInt(0));
-        Assert.AreEqual(Direction.CCW, DirectionFactory.getDirectionByInt(1));
+            DirectionFactory myFactory = new DirectionFactory();
+            Assert.AreEqual(Direction.CW, DirectionFactory.getDirectionByInt(0));
+            Assert.AreEqual(Direction.CCW, DirectionFactory.getDirectionByInt(1));
+        }
     }
-}
 }

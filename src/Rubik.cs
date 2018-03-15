@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpRubikSolver
-{
+namespace CSharpRubikSolver {
 
-    public class Rubik
-    {
+    public class Rubik {
 
 
         private CubeCubicle[] cubeCubicles;
 
         private Face[][] g_faceOrder;
 
-        public Rubik()
-        {
+        public Rubik() {
             cubeCubicles = new CubeCubicle[20];
             g_faceOrder = new Face[][]{
             new Face[]{Face.F, Face.L, Face.B, Face.R},
@@ -29,8 +26,7 @@ namespace CSharpRubikSolver
             initializeCubeCubicles();
         }
 
-        private void initializeCubeCubicles()
-        {
+        private void initializeCubeCubicles() {
             cubeCubicles[0] = new CubeCubicle(new Location(Face.F, Face.U), new Location(Face.F, Face.U), new Position(Face.U, Face.F));
             cubeCubicles[1] = new CubeCubicle(new Location(Face.F, Face.R), new Location(Face.F, Face.R), new Position(Face.U, Face.F));
             cubeCubicles[2] = new CubeCubicle(new Location(Face.F, Face.L), new Location(Face.F, Face.L), new Position(Face.U, Face.F));
@@ -54,8 +50,7 @@ namespace CSharpRubikSolver
 
         }
 
-        private CubeCubicle getCubeCubicle(Location p_location)
-        {
+        private CubeCubicle getCubeCubicle(Location p_location) {
             if ((new Location(Face.F, Face.U)).equals(p_location)) return cubeCubicles[0];
             if ((new Location(Face.F, Face.R)).equals(p_location)) return cubeCubicles[1];
             if ((new Location(Face.F, Face.L)).equals(p_location)) return cubeCubicles[2];
@@ -80,40 +75,33 @@ namespace CSharpRubikSolver
 
         }
 
-        static public bool isFirstFloor(Location p_location)
-        {
+        static public bool isFirstFloor(Location p_location) {
             return (p_location.containsFace(Face.D));
 
         }
 
-        static public bool isThirdFloor(Location p_location)
-        {
+        static public bool isThirdFloor(Location p_location) {
             return (p_location.containsFace(Face.U));
 
         }
 
-        static public bool isSecondFloor(Location p_location)
-        {
+        static public bool isSecondFloor(Location p_location) {
             return (!(isFirstFloor(p_location) || isThirdFloor(p_location)));
 
         }
 
-        public bool changesOnlyInThirdFloor(Permutation p_comparedPermutation)
-        {
+        public bool changesOnlyInThirdFloor(Permutation p_comparedPermutation) {
             CubeCubicle l_permutationCubicle;
             int l_counter = 0;
             for (int i = 0; i < 20; i++)
                 if ((l_permutationCubicle = p_comparedPermutation.getCubicleData(i)) != null)
-                    if (!Rubik.isThirdFloor(l_permutationCubicle.getLocation()))
-                    {
+                    if (!Rubik.isThirdFloor(l_permutationCubicle.getLocation())) {
                         if (!l_permutationCubicle.getCubiePosition()
                                 .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
                                 || !l_permutationCubicle.getCurrentCubieOriginalLocation()
                                 .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
                             return false;
-                    }
-                    else
-                    {
+                    } else {
                         if (!l_permutationCubicle.getCubiePosition()
                                 .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
                                 || !l_permutationCubicle.getCurrentCubieOriginalLocation()
@@ -127,22 +115,18 @@ namespace CSharpRubikSolver
 
         }
 
-        public bool isDifferentItemsOnlyInSecondFloorLessThanThree(Permutation p_comparedPermutation)
-        {
+        public bool isDifferentItemsOnlyInSecondFloorLessThanThree(Permutation p_comparedPermutation) {
             CubeCubicle l_permutationCubicle;
             int l_counter = 0;
             for (int i = 0; i < 20; i++)
                 if ((l_permutationCubicle = p_comparedPermutation.getCubicleData(i)) != null)
-                    if (Rubik.isSecondFloor(l_permutationCubicle.getLocation()))
-                    {
+                    if (Rubik.isSecondFloor(l_permutationCubicle.getLocation())) {
                         if (!l_permutationCubicle.getCubiePosition()
                                 .equals(getPositionOfCubicleOfCubiclePlace(l_permutationCubicle.getLocation()))
                                 || !l_permutationCubicle.getCurrentCubieOriginalLocation()
                                 .equals(getOriginalLocationOfCurrentCubicleInLocation(l_permutationCubicle.getLocation())))
                             l_counter++;
-                    }
-                    else
-                    {
+                    } else {
                         if ((l_permutationCubicle = p_comparedPermutation.getCubicleData(i)) != null)
                             if (Rubik.isFirstFloor(l_permutationCubicle.getLocation()))
                                 if (!l_permutationCubicle.getCubiePosition()
@@ -158,8 +142,7 @@ namespace CSharpRubikSolver
         }
 
 
-        public bool isDifferentItemsInFirstFloorLessThanThree(Permutation p_comparedPermutation)
-        {
+        public bool isDifferentItemsInFirstFloorLessThanThree(Permutation p_comparedPermutation) {
             CubeCubicle l_permutationCubicle;
             int l_counter = 0;
             for (int i = 0; i < 20; i++)
@@ -178,19 +161,15 @@ namespace CSharpRubikSolver
                 , CubeCubicle cubicle1
                 , CubeCubicle cubicle2
                 , CubeCubicle cubicle3
-                , CubeCubicle cubicle4)
-        {
-            if (p_rotation.getDirection() == Direction.CW)
-            {
+                , CubeCubicle cubicle4) {
+            if (p_rotation.getDirection() == Direction.CW) {
                 CubeCubicle tmpCubicle = new CubeCubicle(
                         cubicle4.getLocation(), cubicle4.currentCubieOriginalLocation(), cubicle4.getCubiePosition());
                 cubicle4.rotateFrom(p_rotation, cubicle3);
                 cubicle3.rotateFrom(p_rotation, cubicle2);
                 cubicle2.rotateFrom(p_rotation, cubicle1);
                 cubicle1.rotateFrom(p_rotation, tmpCubicle);
-            }
-            else
-            {
+            } else {
                 CubeCubicle tmpCubicle = new CubeCubicle(
                         cubicle1.getLocation(), cubicle1.currentCubieOriginalLocation(), cubicle1.getCubiePosition());
                 cubicle1.rotateFrom(p_rotation, cubicle2);
@@ -201,11 +180,9 @@ namespace CSharpRubikSolver
 
         }
 
-        public void rotateFace(Rotation p_rotation)
-        {
+        public void rotateFace(Rotation p_rotation) {
             Face l_face = p_rotation.getFace();
-            switch (l_face)
-            {
+            switch (l_face) {
                 case Face.U:
                     rotate(p_rotation, getCubeCubicle(new Location(Face.U, Face.L))
                            , getCubeCubicle(new Location(Face.U, Face.B))
@@ -272,8 +249,7 @@ namespace CSharpRubikSolver
 
         }
 
-        public Permutation getPermutation()
-        {
+        public Permutation getPermutation() {
             Location[] l_rubikLocation = {
                 new Location(Face.F, Face.U),
                 new Location(Face.F, Face.R),
@@ -305,15 +281,13 @@ namespace CSharpRubikSolver
             return l_permutation;
         }
 
-        public void updateCubeCubicle(Location p_location, Location p_currentLocation, Position p_currentPosition)
-        {
+        public void updateCubeCubicle(Location p_location, Location p_currentLocation, Position p_currentPosition) {
             getCubeCubicle(p_location).C_currentPosition = p_currentPosition.getCopy();
             getCubeCubicle(p_location).C_currentCubieOriginalLocation = p_currentLocation.getCopy();
         }
 
 
-        public void setPermutation(Permutation p_permutation)
-        {
+        public void setPermutation(Permutation p_permutation) {
             int i;
             for (i = 0; i < 20; i++)
                 updateCubeCubicle(p_permutation.getCubicleData(i).getLocation().getCopy()
@@ -322,15 +296,13 @@ namespace CSharpRubikSolver
 
         }
 
-        public Location getOriginalLocationOfCurrentCubicleInLocation(Location p_cubicleLocation)
-        {
+        public Location getOriginalLocationOfCurrentCubicleInLocation(Location p_cubicleLocation) {
             return getCubeCubicle(p_cubicleLocation).getCurrentCubieOriginalLocation().getCopy();
             //   getCurrentCubie().getCurrentCubicle().
             // getLocation();
         }
 
-        public Position getPositionOfCubicleOfCubiclePlace(Location p_cubicleLocation)
-        {
+        public Position getPositionOfCubicleOfCubiclePlace(Location p_cubicleLocation) {
             return getCubeCubicle(p_cubicleLocation).getCubiePosition().getCopy();
         }
 

@@ -4,21 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpRubikSolver
-{
+namespace CSharpRubikSolver {
 
     public enum Face {
         U, D, R, L, F, B/*, NOTDEFINED('Z', 9)*/ //don't change this sequence, for Rubik's sake!
 
     }
 
-  
-     public static class FaceMethods
-    {
 
-        public static int getIntOfChar(this Face face) {              
-            switch (face)
-            {
+    public static class FaceMethods {
+
+        public static int getIntOfChar(this Face face) {
+            switch (face) {
                 case Face.U:
                     return '0';
                 case Face.D:
@@ -36,10 +33,8 @@ namespace CSharpRubikSolver
             }
         }
 
-   public static  char getChar(this Face face)
-        {
-            switch (face)
-            {
+        public static char getChar(this Face face) {
+            switch (face) {
                 case Face.U:
                     return 'U';
                 case Face.D:
@@ -57,9 +52,8 @@ namespace CSharpRubikSolver
             }
         }
 
-    public static int getInt(this Face face) {              // Getter
-            switch (face)
-            {
+        public static int getInt(this Face face) {              // Getter
+            switch (face) {
                 case Face.U:
                     return 0;
                 case Face.D:
@@ -78,25 +72,25 @@ namespace CSharpRubikSolver
         }
 
         public static Face getOpposite(this Face face) {
-        switch (face) {
-            case Face.L:
-                return Face.R;
-            case Face.R:
-                return Face.L;
-            case Face.U:
-                return Face.D;
-            case Face.D:
-                return Face.U;
-            case Face.F:
-                return Face.B;
-            case Face.B:
-                return Face.F;
-//            case NOTDEFINED:
-//                return NOTDEFINED;
-            default:
-                return Face.U;
+            switch (face) {
+                case Face.L:
+                    return Face.R;
+                case Face.R:
+                    return Face.L;
+                case Face.U:
+                    return Face.D;
+                case Face.D:
+                    return Face.U;
+                case Face.F:
+                    return Face.B;
+                case Face.B:
+                    return Face.F;
+                //            case NOTDEFINED:
+                //                return NOTDEFINED;
+                default:
+                    return Face.U;
+            }
         }
     }
-}
 }
 

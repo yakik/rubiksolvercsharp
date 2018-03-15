@@ -4,23 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpRubikSolver
-{
+namespace CSharpRubikSolver {
 
-    public enum Direction
-    {
+    public enum Direction {
         CW, CCW
     }
 
-    public static class DirectionMethods
-    {
+    public static class DirectionMethods {
 
 
 
-        public static String getString(this Direction dir)
-        {              // Getter
-            switch (dir)
-            {
+        public static String getString(this Direction dir) {              // Getter
+            switch (dir) {
                 case Direction.CW:
                     return "CW";
                 case Direction.CCW:
@@ -31,8 +26,7 @@ namespace CSharpRubikSolver
 
         }
 
-        public static int getInt(this Direction dir)
-        {              // Getter
+        public static int getInt(this Direction dir) {              // Getter
             if (dir == Direction.CW)
                 return 0;
             else
@@ -40,8 +34,7 @@ namespace CSharpRubikSolver
 
         }
 
-        public static Direction getOpposite(this Direction dir)
-        {
+        public static Direction getOpposite(this Direction dir) {
             if (dir == Direction.CW)
                 return Direction.CCW;
             else

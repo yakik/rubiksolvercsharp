@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpRubikSolver
-{
+namespace CSharpRubikSolver {
 
-public enum SolutionTarget {
-    Complete, FirstFloor, SecondFloor}
+    public enum SolutionTarget {
+        Complete, FirstFloor, SecondFloor
+    }
 
 }
 

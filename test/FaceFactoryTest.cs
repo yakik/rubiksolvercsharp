@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverUTests
-{
+namespace CSharpRubikSolverUTests {
 
     [TestClass]
     public class FaceFactoryTest {
 
-    [TestMethod]
+        [TestMethod]
         public void getFaceByInt() {
-        FaceFactory myFactory = new FaceFactory();
-        Assert.AreEqual(Face.L, FaceFactory.getFaceByInt(3));
-        Assert.AreEqual(Face.R, FaceFactory.getFaceByInt(2));
-        Assert.AreEqual(Face.U, FaceFactory.getFaceByInt(0));
-        Assert.AreEqual(Face.D, FaceFactory.getFaceByInt(1));
-        Assert.AreEqual(Face.F, FaceFactory.getFaceByInt(4));
-        Assert.AreEqual(Face.B, FaceFactory.getFaceByInt(5));
+            FaceFactory myFactory = new FaceFactory();
+            Assert.AreEqual(Face.L, FaceFactory.getFaceByInt(3));
+            Assert.AreEqual(Face.R, FaceFactory.getFaceByInt(2));
+            Assert.AreEqual(Face.U, FaceFactory.getFaceByInt(0));
+            Assert.AreEqual(Face.D, FaceFactory.getFaceByInt(1));
+            Assert.AreEqual(Face.F, FaceFactory.getFaceByInt(4));
+            Assert.AreEqual(Face.B, FaceFactory.getFaceByInt(5));
 
 
+        }
     }
-}
 }

@@ -6,58 +6,57 @@ using System.Threading.Tasks;
 using CSharpRubikSolver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CSharpRubikSolverUTests
-{
+namespace CSharpRubikSolverUTests {
 
 
     [TestClass]
     public class PermutationTest {
 
-    [TestMethod]
+        [TestMethod]
         public void getValue() {
-        Rubik myRubik = new Rubik();
-        myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
-        Permutation myPermutation = myRubik.getPermutation();
-        Assert.AreEqual(10, myPermutation.getValue(1), "first floor");
-        Assert.AreEqual(14, myPermutation.getValue(2), "second floor");
-        Assert.AreEqual(24, myPermutation.getValue(3), "third floor");
+            Rubik myRubik = new Rubik();
+            myRubik.rotateFace(new Rotation(Face.F, Direction.CW));
+            Permutation myPermutation = myRubik.getPermutation();
+            Assert.AreEqual(10, myPermutation.getValue(1), "first floor");
+            Assert.AreEqual(14, myPermutation.getValue(2), "second floor");
+            Assert.AreEqual(24, myPermutation.getValue(3), "third floor");
 
-    }
+        }
 
-    [TestMethod]
+        [TestMethod]
         public void testEqualsEqual() {
-        Permutation Apermutation = new Permutation();
-        Permutation Bpermutation = new Permutation();
+            Permutation Apermutation = new Permutation();
+            Permutation Bpermutation = new Permutation();
 
-        for (int i=0;i<20;i++){
-            Apermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
-                    , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
-            Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
-                    , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+            for (int i = 0; i < 20; i++) {
+                Apermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
+                        , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+                Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
+                        , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+            }
+
+            Assert.AreEqual(true, Apermutation.equals(Bpermutation));
+
         }
-
-        Assert.AreEqual(true, Apermutation.equals(Bpermutation));
-
-    }
-    [TestMethod]
+        [TestMethod]
         public void testEqualsFirstFloor() {
-        Permutation Apermutation = new Permutation();
-        Permutation Bpermutation = new Permutation();
+            Permutation Apermutation = new Permutation();
+            Permutation Bpermutation = new Permutation();
 
-        for (int i=0;i<19;i++){
-            Apermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
-                    , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
-            Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
-                    , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+            for (int i = 0; i < 19; i++) {
+                Apermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
+                        , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+                Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.D, Face.R)
+                        , new Location(Face.D, Face.R), new Position(Face.U, Face.F)));
+            }
+            Apermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R)
+                    , new Location(Face.U, Face.R), new Position(Face.U, Face.F)));
+            Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R)
+                    , new Location(Face.U, Face.L), new Position(Face.U, Face.F)));
+
+            Assert.AreEqual(false, Apermutation.equals(Bpermutation), "first floor");
+            Assert.AreEqual(false, Apermutation.equals(Bpermutation), "third floor");
+
         }
-        Apermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R)
-                , new Location(Face.U, Face.R), new Position(Face.U, Face.F)));
-        Bpermutation.addCubicleData(new CubeCubicle(new Location(Face.U, Face.R)
-                , new Location(Face.U, Face.L), new Position(Face.U, Face.F)));
-
-        Assert.AreEqual(false, Apermutation.equals(Bpermutation),"first floor");
-        Assert.AreEqual(false, Apermutation.equals(Bpermutation),"third floor");
-
     }
-}
 }
