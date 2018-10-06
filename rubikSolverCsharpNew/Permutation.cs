@@ -39,7 +39,6 @@ namespace CSharpRubikSolver {
                             && (c_Cube_cubicle[i].getCubiePosition().equals(new Position(Face.U, Face.F)))
                             )
                         l_value += 2;
-
             }
             return l_value;
         }
@@ -56,10 +55,8 @@ namespace CSharpRubikSolver {
             bool l_answer = true;
             int i;
             for (i = 0; i < 20; i++)
-                if (!(getCubicleData(i).equals(p_permutation.getCubicleData(i))))
+                if (!getCubicleData(i).equals(p_permutation.getCubicleData(i)))
                     return false;
-                else
-                    l_answer = true;
             return l_answer;
         }
     }

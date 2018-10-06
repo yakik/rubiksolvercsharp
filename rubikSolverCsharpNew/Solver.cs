@@ -1,10 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpRubikSolver {
 
@@ -85,7 +79,6 @@ namespace CSharpRubikSolver {
                                         int p_floor) {
             Rubik l_rubik = new Rubik();
             Permutation l_permutation = p_solution.getPermutation().getCopy();
-            RotationLinkedList l_rotationLinkedList = new RotationLinkedList();
             int l_minimumValue = l_permutation.getValue(p_floor);
 
             //	if (l_minimumValue < 8)
