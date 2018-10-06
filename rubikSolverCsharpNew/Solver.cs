@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using RuntimeSpiesTest;
 
 namespace CSharpRubikSolver {
 
@@ -15,8 +14,6 @@ namespace CSharpRubikSolver {
         }
 
         public Solution solve(Rubik p_rubik, RotationTree p_firstTree, RotationTree p_secondTree, RotationTree p_thirdTree) {
-            var mySpy = new RuntimeSpy();
-            mySpy.SetMethodCall(MethodBase.GetCurrentMethod(), p_rubik,p_firstTree,p_secondTree,p_thirdTree);
            
             int l_numberOfCubicleInPlace;
             Permutation l_permutation = p_rubik.getPermutation();
@@ -53,8 +50,6 @@ namespace CSharpRubikSolver {
             }
 
             var toReturn = l_solutionManager.getBest();
-            mySpy.setMethodReturnValue(toReturn);
-            Console.WriteLine(mySpy.getHarness());
             return toReturn;
 
         }
