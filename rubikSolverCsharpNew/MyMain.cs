@@ -67,9 +67,9 @@ namespace CSharpRubikSolver {
             RotationTree firstFloorTree = new RotationTree();
             RotationTree secondFloorTree = new RotationTree();
             RotationTree thirdFloorTree = new RotationTree();
-            RubikFileReader readFirstFloor = new RubikFileReader("FirstFloor.txt");
-            RubikFileReader readSecondFloor = new RubikFileReader("SecondFloor.txt");
-            RubikFileReader readThirdFloor = new RubikFileReader("ThirdFloor.txt");
+            RubikFileReader readFirstFloor = new RubikFileReader("..\\..\\..\\Resources\\FirstFloor.txt");
+            RubikFileReader readSecondFloor = new RubikFileReader("..\\..\\..\\Resources\\SecondFloor.txt");
+            RubikFileReader readThirdFloor = new RubikFileReader("..\\..\\..\\Resources\\ThirdFloor.txt");
             RotationTreeLoader.loadRotationTreeFromFile(readFirstFloor, firstFloorTree);
             RotationTreeLoader.loadRotationTreeFromFile(readSecondFloor, secondFloorTree);
             RotationTreeLoader.loadRotationTreeFromFile(readThirdFloor, thirdFloorTree);
