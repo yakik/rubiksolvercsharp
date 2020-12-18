@@ -105,7 +105,7 @@ namespace CSharpRubikSolver {
 
                     if (l_resultPermutation.getValue(p_floor) >= p_minimumValue) {
                         p_solutionManager.addSolution(l_rotationLinkedList, l_resultPermutation, p_prevSolution, l_resultPermutation.getValue(p_floor), p_floor);
-                        //     if (depth == 1) Console.Write("Hi,value={0}\n",l_resultPermutation.getValue(p_floor));
+                       
                     }
                     if (p_floor == 3 && depth == 0) {
                         //  Console.WriteLine("Hi");
